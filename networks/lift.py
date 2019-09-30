@@ -648,6 +648,9 @@ class Network(object):
                     # Also append to the global list
                     self.params["joint"] += self.params[module]
                     self.allparams["joint"] += self.allparams[module]
+                    for modu in self.allparams[module]:
+                        if modu not in self.allparams["joint"]:
+                            self.allparams["joint"].append(modu)
                     # Mark that it is initialized
                     is_first = False
 
